@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const {genSaltSync, hashSync} = require('bcrypt');
 module.exports = (sequelize, DataTypes) => {
   class Users extends Model {
     /**
@@ -38,7 +39,13 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       unique: true
     },
-    password: DataTypes.STRING,
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      set(value){
+        this.setDataValue('password', hashSync(value, genSaltSync(10)));
+      }
+    },
     bornDate: DataTypes.DATEONLY,
     photo: DataTypes.STRING,
     phoneNumber: DataTypes.INTEGER,
