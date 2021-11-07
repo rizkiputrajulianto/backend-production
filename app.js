@@ -2,10 +2,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const {sequelize, Sequelize} = require('./models');
+const {sequelize, Sequelize} = require('./src/models');
 const router = require('./src/routes');
 
-sequelize.sync();
+sequelize.sync({force: true});
 
 var app = express();
 
