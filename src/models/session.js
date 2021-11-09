@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate({Session, Class, Materi}) {
       // define association here
       Session.belongsTo(Class, {foreignKey: 'idClass', onUpdate: 'CASCADE', onDelete: 'CASCADE'});
-      Session.belongsToMany(Class, {through: 'presensi', foreignKey: 'idSession', onUpdate: 'CASCADE', onDelete: 'CASCADE'});
+      Session.belongsToMany(Class, {through: 'Presensi', foreignKey: 'idSession', onUpdate: 'CASCADE', onDelete: 'CASCADE'});
       Session.belongsTo(Materi, {foreignKey: 'idMateri', onUpdate: 'CASCADE', onDelete: 'CASCADE'});
     }
   };

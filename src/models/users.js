@@ -31,10 +31,8 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
+    name: DataTypes.STRING,
+    username: DataTypes.STRING,
     email:{
       type: DataTypes.STRING,
       unique: true
@@ -51,7 +49,9 @@ module.exports = (sequelize, DataTypes) => {
     phoneNumber: DataTypes.INTEGER,
     currentJob: DataTypes.STRING,
     institution: DataTypes.STRING,
-    status: DataTypes.ENUM('Admin', 'User'),
+    status: {
+      type: DataTypes.ENUM('Admin', 'User'),
+      defaultValue: "User"},
     idAlamat: DataTypes.INTEGER,
     idSocmed: DataTypes.INTEGER,
   }, {

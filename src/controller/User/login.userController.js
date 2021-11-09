@@ -5,10 +5,11 @@ const {createJWT} = require('../../middleware/jwt');
 const service = async (req, res, next) => {
     try {
         const user = await Users.findOne({where : {email : req.body.email}});
-        if (user) {
-        const validUser = compareSync(req.body.password, user.password);
+        const name = user.name || user.username
+            if (user) {
+                const validUser = compareSync(req.body.password, user.password);
             if (validUser) {
-            return res.json({status: 'success', access: createJWT(user),msg: `Welcome ${user.name}`});                
+            return res.json({status: 'success', access: createJWT(user),msg: `Welcome ${name}`});                
             } else {
                 return res.status(401).json({msg: 'Wrong Password'})
             }

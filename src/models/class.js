@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE'
       });
       Class.belongsToMany(Session, {
-        through: 'presensi',
+        through: 'Presensi',
         foreignKey: 'idClass',
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
