@@ -6,9 +6,9 @@ const getUsers = require("./get.usersController");
 const validator = require('../../helpers/validator');
 
 
-router.post('/login', UserLogin.service);
+router.post('/login',UserLogin.validation,validator, UserLogin.service);
 router.post('/register',UserRegister.validation, validator, UserRegister.service);
 router.get('/', getUsers.service);
-router.get('/:id', getUsers.service);
+router.get('/:username', getUsers.service);
 
 module.exports = router;

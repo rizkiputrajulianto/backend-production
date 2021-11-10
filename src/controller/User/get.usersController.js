@@ -3,10 +3,10 @@ const {Users} = require("../../models");
 const service = async (req, res, next) => {
     try{
         const where = {};
-        if (req.params.id) {
-            where.id = req.params.id;
+        if (req.params.username) {
+            where.username = req.params.username;
         };
-        const requestDB = await Users.findAll({where});
+        const requestDB = await Users.findAll({where, attributes : {exclude: ["password"]}});
         if (requestDB) {
             return res.json({data: requestDB});
         } else{

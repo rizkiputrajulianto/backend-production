@@ -16,8 +16,7 @@ const validation = [
             return Users.findOne({where:{email:value}}).then(data=>{if(data){ return Promise.reject("Email already Exist")}})}),        
     check('email').isEmail().withMessage("Email is Not Valid"),
     check('username').notEmpty().withMessage('Username is required').isLength({min: 6}).withMessage("Username must be Contain 6 Characters").custom(value => {
-            return Users.findOne({where:{username:value}}).then(data=>{if(data){ return Promise.reject("Username already Exist")}})
-    }),
+            return Users.findOne({where:{username:value}}).then(data=>{if(data){ return Promise.reject("Username already Exist")}})}),
     body('password').notEmpty().withMessage('Password is required').custom(value =>{
         const data = value.split("");
         if(data.length <= 7) {
