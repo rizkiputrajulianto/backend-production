@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({Session, Class, Materi}) {
+    static associate({Session, Class, Materi, joinClass}) {
       // define association here
       Session.belongsTo(Class, {foreignKey: 'idClass', onUpdate: 'CASCADE', onDelete: 'CASCADE'});
-      Session.belongsToMany(Class, {through: 'Presensi', foreignKey: 'idSession', onUpdate: 'CASCADE', onDelete: 'CASCADE'});
-      Session.belongsTo(Materi, {foreignKey: 'idMateri', onUpdate: 'CASCADE', onDelete: 'CASCADE'});
+      Session.belongsToMany(joinClass, {through: 'Presensi', foreignKey: 'idSession',as : 'Absensi', onUpdate: 'CASCADE', onDelete: 'CASCADE'});
+      Session.belongsTo(Materi, {foreignKey: 'idMateri',as: 'Materi',onUpdate: 'CASCADE', onDelete: 'CASCADE'});
     }
   };
   Session.init({
@@ -27,6 +27,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Session',
+    tableName: 'session'
   });
   return Session;
 };

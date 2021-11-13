@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate({Materi, Session}) {
       // define association here
-      Materi.hasMany(Session, {foreignKey: 'idMateri'});
+      Materi.hasMany(Session, {foreignKey: 'idMateri', as: 'Session'});
     }
   };
   Materi.init({
@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Materi',
+    tableName: 'materi'
   });
   return Materi;
 };

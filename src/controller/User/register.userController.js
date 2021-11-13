@@ -12,18 +12,10 @@ const service = async (req, res, next) => {
 };
 
 const validation = [
-    body('email').notEmpty().withMessage('Email is required').custom(value => {
+    body('email').notEmpty().withMessage('Email is required').isEmail().withMessage('Email is Not Valid').custom(value => {
             return Users.findOne({where:{email:value}}).then(data=>{if(data){ return Promise.reject("Email already Exist")}})}),        
-    check('email').isEmail().withMessage("Email is Not Valid"),
-    check('username').notEmpty().withMessage('Username is required').isLength({min: 6}).withMessage("Username must be Contain 6 Characters").custom(value => {
+    body('username').notEmpty().withMessage('Username is required').isLength({min: 6}).withMessage("Username must be Contain 6 Characters").isAlphanumeric().withMessage("Username harus alpha numeric").custom(value => {
             return Users.findOne({where:{username:value}}).then(data=>{if(data){ return Promise.reject("Username already Exist")}})}),
-    body('password').notEmpty().withMessage('Password is required').custom(value =>{
-        const data = value.split("");
-        if(data.length <= 7) {
-            return Promise.reject('Password must be 8 Character or long');
-        } else{
-            return true
-        }
-    })]
+    body('password').notEmpty().withMessage('Password is required').isLength({min: 8})]
 
 module.exports = {service, validation};

@@ -11,16 +11,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate({Presensi, joinClass}) {
       // define association here
-      Presensi.belongsTo(joinClass, {foreignKey: 'idUser'});
     }
   };
   Presensi.init({
     idSession: DataTypes.INTEGER,
-    idClass: DataTypes.INTEGER,
-    idUser: DataTypes.INTEGER
+    idJoinClass: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Presensi',
+    tableName: 'presensi'
   });
   return Presensi;
 };

@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       });
-      Users.belongsToMany(Class, {through: 'joinClass', foreignKey: 'idUsers', onDelete: 'CASCADE', onUpdate: 'CASCADE'});
+      Users.belongsToMany(Class, {through: 'joinClass', as: 'Class', foreignKey: 'idUsers', onDelete: 'CASCADE', onUpdate: 'CASCADE'});
     }
   };
   Users.init({
@@ -47,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     bornDate: DataTypes.DATEONLY,
     photo: DataTypes.STRING,
-    phoneNumber: DataTypes.INTEGER,
+    phoneNumber: DataTypes.INTEGER(12),
     currentJob: DataTypes.STRING,
     institution: DataTypes.STRING,
     status: {
@@ -58,6 +58,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Users',
+    tableName: 'users'
   });
   return Users;
 };

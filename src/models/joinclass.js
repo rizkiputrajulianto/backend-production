@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const session = require('./session');
 module.exports = (sequelize, DataTypes) => {
   class joinClass extends Model {
     /**
@@ -9,9 +10,9 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({joinClass, Presensi}) {
+    static associate({joinClass, Session}) {
       // define association here
-      joinClass.hasOne(Presensi, {foreignKey: 'idUser'});
+      joinClass.belongsToMany(Session, {through: 'Presensi',foreignKey: 'idJoinClass'});
     }
   };
   joinClass.init({
@@ -21,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'joinClass',
+    tableName: 'joinClass'
   });
   return joinClass;
 };

@@ -13,17 +13,12 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Class.belongsToMany(Users, {
         through: 'joinClass',
+        as: 'Users',
         foreignKey: 'idClass',
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       });
       Class.hasMany(Session, {
-        foreignKey: 'idClass',
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
-      });
-      Class.belongsToMany(Session, {
-        through: 'Presensi',
         foreignKey: 'idClass',
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
@@ -41,6 +36,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Class',
+    tableName: 'class'
   });
   return Class;
 };

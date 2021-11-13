@@ -31,11 +31,13 @@ const checkJwtAdmin = (req, res, next) => {
                 if (user.status === "Admin") {
                 req.auth = user;
                 next();
+                } else{
+                    return res.status(401).json({msg: "Sorry you are not an admin"})
                 }
             }
         })
     }
 }
-module.exports = {createJWT, checkJwt}
+module.exports = {createJWT, checkJwt, checkJwtAdmin}
 
 //belom kelar, butuh nonton record pas review dlu baru dikelarin

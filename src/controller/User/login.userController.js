@@ -5,8 +5,8 @@ const {body, check} = require('express-validator');
 
 const service = async (req, res, next) => {
     try {
-        const user = await Users.findOne({where : {email : req.body.username}}) || await Users.findOne({where: {username: req.body.username}});
-            if (user) {
+        const user = await Users.findOne({where : {email : req.body.username}}) || await Users.findOne({where: {username: req.body.username}});  
+        if (user) {
                 const validUser = compareSync(req.body.password, user.password);
             if (validUser) {
                 const name = user.name || user.username
