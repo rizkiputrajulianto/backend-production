@@ -3,107 +3,107 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Provinsi', [{
-      'id' : 1,
-      'namaProvinsi' : 'Aceh'
+      id : 1,
+      nama_provinsi : 'Aceh'
     },{
-      'id' : 2,
-      'namaProvinsi' : 'Bali'
+      id : 2,
+      nama_provinsi : 'Bali'
     },{
-      'id' : 3,
-      'namaProvinsi' : 'Bangka Belitung'
+      id : 3,
+      nama_provinsi : 'Bangka Belitung'
     },{
-      'id' : 4,
-      'namaProvinsi' : 'Banten'
+      id : 4,
+      nama_provinsi : 'Banten'
     },{
-      'id' : 5,
-      'namaProvinsi' : 'Bengkulu'
+      id : 5,
+      nama_provinsi : 'Bengkulu'
     },{
-      'id' : 6,
-      'namaProvinsi' : 'Yogjakarta'
+      id : 6,
+      nama_provinsi : 'Yogjakarta'
     },{
-      'id' : 7,
-      'namaProvinsi' : 'Jakarta'
+      id : 7,
+      nama_provinsi : 'Jakarta'
     },{
-      'id' : 8,
-      'namaProvinsi' : 'Gorontalo'
+      id : 8,
+      nama_provinsi : 'Gorontalo'
     },{
-      'id' : 9,
-      'namaProvinsi' : 'Jawa Barat'
+      id : 9,
+      nama_provinsi : 'Jawa Barat'
     },{
-      'id' : 10,
-      'namaProvinsi' : 'Jawa Tengah'
+      id : 10,
+      nama_provinsi : 'Jawa Tengah'
     },{
-      'id' : 11,
-      'namaProvinsi' : 'Jawa Timur'
+      id : 11,
+      nama_provinsi : 'Jawa Timur'
     },{
-      'id' : 12,
-      'namaProvinsi' : 'Kalimantan Barat'
+      id : 12,
+      nama_provinsi : 'Kalimantan Barat'
     },{
-      'id' : 13,
-      'namaProvinsi' : 'Kalimantan Selatan'
+      id : 13,
+      nama_provinsi : 'Kalimantan Selatan'
     },{
-      'id' : 14,
-      'namaProvinsi' : 'Kalimantan Tengah'
+      id : 14,
+      nama_provinsi : 'Kalimantan Tengah'
     },{
-      'id' : 15,
-      'namaProvinsi' : 'Kalimantan Timur'
+      id : 15,
+      nama_provinsi : 'Kalimantan Timur'
     },{
-      'id' : 16,
-      'namaProvinsi' : 'Kalimantan Utara'
+      id : 16,
+      nama_provinsi : 'Kalimantan Utara'
     },{
-      'id' : 17,
-      'namaProvinsi' : 'Kepualuan Riau'
+      id : 17,
+      nama_provinsi : 'Kepualuan Riau'
     },{
-      'id' : 18,
-      'namaProvinsi' : 'Lampung'
+      id : 18,
+      nama_provinsi : 'Lampung'
     },{
-      'id' : 19,
-      'namaProvinsi' : 'Maluku'
+      id : 19,
+      nama_provinsi : 'Maluku'
     },{
-      'id' : 20,
-      'namaProvinsi' : 'Maluku Utara'
+      id : 20,
+      nama_provinsi : 'Maluku Utara'
     },{
-      'id' : 21,
-      'namaProvinsi' : 'Nusa Tenggara Barat'
+      id : 21,
+      nama_provinsi : 'Nusa Tenggara Barat'
     },{
-      'id' : 22,
-      'namaProvinsi' : 'Nusa Tenggara Timur'
+      id : 22,
+      nama_provinsi : 'Nusa Tenggara Timur'
     },{
-      'id' : 23,
-      'namaProvinsi' : 'Papua'
+      id : 23,
+      nama_provinsi : 'Papua'
     },{
-      'id' : 24,
-      'namaProvinsi' : 'Papua Barat'
+      id : 24,
+      nama_provinsi : 'Papua Barat'
     },{
-      'id' : 25,
-      'namaProvinsi' : 'Riau'
+      id : 25,
+      nama_provinsi : 'Riau'
     },{
-      'id' : 26,
-      'namaProvinsi' : 'Sumatera Barat'
+      id : 26,
+      nama_provinsi : 'Sumatera Barat'
     },{
-      'id' : 27,
-      'namaProvinsi' : 'Sumatera Selatan'
+      id : 27,
+      nama_provinsi : 'Sumatera Selatan'
     },{
-      'id' : 28,
-      'namaProvinsi' : 'Sumatera Utara'
+      id : 28,
+      nama_provinsi : 'Sumatera Utara'
     },{
-      'id' : 29,
-      'namaProvinsi' : 'Selawesi Barat'
+      id : 29,
+      nama_provinsi : 'Selawesi Barat'
     },{
-      'id' : 30,
-      'namaProvinsi' : 'Sulawesi Selatan'
+      id : 30,
+      nama_provinsi : 'Sulawesi Selatan'
     },{
-      'id' : 31,
-      'namaProvinsi' : 'Sulawesi Tengah'
+      id : 31,
+      nama_provinsi : 'Sulawesi Tengah'
     },{
-      'id' : 32,
-      'namaProvinsi' : 'Sulawesi Tenggara'
+      id : 32,
+      nama_provinsi : 'Sulawesi Tenggara'
     },{
-      'id' : 33,
-      'namaProvinsi' : 'Sulawesi Utara'
+      id : 33,
+      nama_provinsi : 'Sulawesi Utara'
     },{
-      'id' : 34,
-      'namaProvinsi' : 'Jambi'
+      id : 34,
+      nama_provinsi : 'Jambi'
     }]);
   },
 
