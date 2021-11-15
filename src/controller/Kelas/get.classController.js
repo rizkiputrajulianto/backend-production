@@ -8,7 +8,7 @@ const service = async (req, res, next) => {
         }
         const page = req.query.page || 0;
         const limit = req.query.limit || 0;
-        const requestDB = await Class.findAll({where,attributes:{exclude: ["idSesi"]}, offset: (page -1)* limit || null, limit: limit || null})
+        const requestDB = await Class.findAll({where,include: [{model:Session, as: 'Sessions', include: [{model: Materi, as: "Materi"}]}] ,offset: (page -1)* limit || null, limit: limit || null})
         if (!req.params.kode) {
             return res.json({data: requestDB})
         } else{

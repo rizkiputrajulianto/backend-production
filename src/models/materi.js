@@ -11,13 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate({Materi, Session}) {
       // define association here
-      Materi.hasMany(Session, {foreignKey: 'idMateri', as: 'Session'});
+      Materi.belongsTo(Session, {foreignKey: 'idSesi', as: 'Session'});
     }
   };
   Materi.init({
     namaMateri: DataTypes.STRING,
     file: DataTypes.STRING,
-    jenisMateri: DataTypes.ENUM('Recording', 'Materi')
+    jenisMateri: DataTypes.ENUM('Recording', 'Materi'),
+    idSesi: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Materi',

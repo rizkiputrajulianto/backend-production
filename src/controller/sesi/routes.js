@@ -4,13 +4,14 @@ const postJadwal = require('./create.jadwalController');
 const getJadwal = require('./get.jadwalController');
 const putJadwal = require('./update.jadwalController');
 const deleteJadwal = require('./delete.jadwalController');
+const auth = require('../../middleware/jwt');
 
 
-router.post('/', postJadwal.service);
-router.get('/', getJadwal.service);
-router.get('/:kode', getJadwal.service);
-router.put('/:kode', putJadwal.service);
-router.delete('/:kode', deleteJadwal.service);
+router.post('/',auth.checkJwtAdmin, postJadwal.service);
+router.get('/',auth.checkJwt, getJadwal.service);
+router.get('/:kode',auth.checkJwt, getJadwal.service);
+router.put('/:kode',auth.checkJwtAdmin, putJadwal.service);
+router.delete('/:kode',auth.checkJwtAdmin, deleteJadwal.service);
 
 
 module.exports = router;

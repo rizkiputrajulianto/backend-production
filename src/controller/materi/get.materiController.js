@@ -6,7 +6,7 @@ const service = async (req, res, next) => {
         if (req.params.kode) {
             where.kodeSesi = req.params.kode;
         }
-        const requestDB = await Session.findAll({where,attributes: ["namaSesi", "kodeSesi"], include: [{model: Materi, as: 'Materi'}]});
+        const requestDB = await Session.findAll({where,attributes:{exclude: ["createdAt","updatedAt","deletedAt"]}, include: [{model: Materi, as: 'Materi', attributes:{exclude: ["createdAt","updatedAt","deletedAt"]}}]});
         if (!req.params.kode) {
         return res.json({data: requestDB});
         } else {

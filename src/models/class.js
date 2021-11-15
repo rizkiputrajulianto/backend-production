@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       });
       Class.hasMany(Session, {
         foreignKey: 'idClass',
+        as: 'Sessions',
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       });

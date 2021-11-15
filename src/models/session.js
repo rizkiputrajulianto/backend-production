@@ -11,9 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate({Session, Class, Materi, joinClass}) {
       // define association here
-      Session.belongsTo(Class, {foreignKey: 'idClass', onUpdate: 'CASCADE', onDelete: 'CASCADE'});
+      Session.belongsTo(Class, {foreignKey: 'idClass', as: 'Class', onUpdate: 'CASCADE', onDelete: 'CASCADE'});
       Session.belongsToMany(joinClass, {through: 'Presensi', foreignKey: 'idSession',as : 'Absensi', onUpdate: 'CASCADE', onDelete: 'CASCADE'});
-      Session.belongsTo(Materi, {foreignKey: 'idMateri',as: 'Materi',onUpdate: 'CASCADE', onDelete: 'CASCADE'});
+      Session.hasMany(Materi, {foreignKey: 'idSesi',as: 'Materi',onUpdate: 'CASCADE', onDelete: 'CASCADE'});
     }
   };
   Session.init({
@@ -23,7 +23,6 @@ module.exports = (sequelize, DataTypes) => {
     waktuSelesai: DataTypes.DATE,
     urutanSesi: DataTypes.INTEGER,
     idClass: DataTypes.INTEGER,
-    idMateri: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Session',

@@ -1,4 +1,4 @@
-const {Users, Kota, Kecamatan, Provinsi, Alamat, socmed} = require('../../models');
+const {Users, Kota, Kecamatan, Alamat, socmed} = require('../../models');
 
 const service = async (req, res, next) => {
     try {
