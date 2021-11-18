@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate({Alamat, Users, Kecamatan}) {
       // define association here
-      Alamat.hasOne(Users, { foreignKey: 'idAlamat', onUpdate: 'CASCADE', onDelete: 'CASCADE' });
-      Alamat.belongsTo(Kecamatan, { foreignKey: 'idKecamatan', onUpdate: 'CASCADE', onDelete: 'CASCADE' });
+      Alamat.hasOne(Users, { foreignKey: 'idAlamat',as:'User', onUpdate: 'CASCADE', onDelete: 'CASCADE' });
+      Alamat.belongsTo(Kecamatan, { foreignKey: 'idKecamatan',as:'Kecamatan', onUpdate: 'CASCADE', onDelete: 'CASCADE' });
     }
   };
   Alamat.init({

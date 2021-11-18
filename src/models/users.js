@@ -14,15 +14,17 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Users.belongsTo(socmed, {
         foreignKey: 'idSocmed',
+        as: 'sosmed',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       });
       Users.belongsTo(Alamat, {
         foreignKey: 'idAlamat',
+        as: 'alamat',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       });
-      Users.belongsToMany(Class, {through: 'joinClass', as: 'Class', foreignKey: 'idUsers', onDelete: 'CASCADE', onUpdate: 'CASCADE'});
+      Users.belongsToMany(Class, {through: 'joinClass', as: 'activeClass', foreignKey: 'idUsers', onDelete: 'CASCADE', onUpdate: 'CASCADE'});
     }
   };
   Users.init({

@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate({Kota, Kecamatan, Provinsi}) {
       // define association here
-      Kota.hasMany(Kecamatan, {foreignKey: 'idKota', onUpdate: 'CASCADE', onDelete: 'CASCADE'});
-      Kota.belongsTo(Provinsi, {foreignKey: 'idProvinsi', onUpdate: 'CASCADE', onDelete: 'CASCADE'});
+      Kota.hasMany(Kecamatan, {foreignKey: 'idKota',as: 'kecamatan', onUpdate: 'CASCADE', onDelete: 'CASCADE'});
+      Kota.belongsTo(Provinsi, {foreignKey: 'idProvinsi',as: 'provinsi', onUpdate: 'CASCADE', onDelete: 'CASCADE'});
     }
   };
   Kota.init({

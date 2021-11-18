@@ -1,4 +1,4 @@
-const {Class} = require('../../models');
+const {Class, Session, Materi} = require('../../models');
 
 const service = async (req, res, next) => {
     try {

@@ -33,7 +33,6 @@ module.exports = (sequelize, DataTypes) => {
     tanggalSelesai: DataTypes.DATEONLY,
     deskripsi: DataTypes.TEXT,
     fotoKelas: DataTypes.STRING,
-    idSesi: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Class',
