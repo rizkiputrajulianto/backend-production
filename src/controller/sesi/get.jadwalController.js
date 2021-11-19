@@ -1,4 +1,4 @@
-const {Session} = require('../../models');
+const {Session, joinClass} = require('../../models');
 
 const service = async (req, res, next) => {
     try {
@@ -6,9 +6,7 @@ const service = async (req, res, next) => {
         if (req.params.kode) {
             where.kodeSesi = req.params.kode
         }
-        const page = req.query.page || 0;
-        const limit = req.query.limit || 0;
-        const requestDB = await Session.findAll({where,attributes: {exclude: ["createdAt","updatedAt","deletedAt"]}, offset: (page-1)*2 || null, limit: limit || null, include: [{model: joinClass, as: 'Absensi', attributes: {exclude:["createdAt","updatedAt","deletedAt"]}}] });
+        const requestDB = await Session.findAll({where,attributes: {exclude: ["createdAt","updatedAt","deletedAt"]}, include: [{model: joinClass, as: 'Absensi', attributes: {exclude:["createdAt","updatedAt","deletedAt"]}}]});
         if (!req.params.kode) {
             return res.json({data: requestDB});
         } else{
