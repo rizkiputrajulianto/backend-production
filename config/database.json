@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "final_project",
+    "database": "backend",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "define":{

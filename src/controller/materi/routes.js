@@ -9,7 +9,7 @@ const validator = require('../../helpers/validator');
 const auth = require('../../middleware/jwt');
 
 
-router.get('/',auth.createJWT, getMateri.service);
+router.get('/',auth.checkJwt, getMateri.service);
 router.get('/:kode',auth.checkJwt, getMateri.service);
 router.get('/one/:id', auth.checkJwt, getOneMateri.service);
 router.post('/',auth.checkJwtAdmin, postMateri.service);

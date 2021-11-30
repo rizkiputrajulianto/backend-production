@@ -5,7 +5,7 @@ const service = async (req, res, next) => {
         const where = {
             kodeSesi: req.params.kode
         }
-        const requestDB = await Session.destroy(where);
+        const requestDB = await Session.destroy({where});
         if (requestDB) {
             return res.json({msg: 'Data berhasil dihapus'});
         }else{

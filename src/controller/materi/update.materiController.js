@@ -8,7 +8,7 @@ const service = async (req, res, next) => {
         }
         const requestDB = await Materi.update(payload, {where});
         if (requestDB[0]) {
-            return res.json({msg: 'Data berhasil diubah', data: requestDB[0]});
+            return res.json({msg: 'Data berhasil diubah', data: payload});
         } else{
             return res.status(404).json({msg: 'Data gagal di Update'});
         }
