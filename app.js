@@ -18,5 +18,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(router);
+app.use('/uploads', express.static('uploads'));
 
 module.exports = app;

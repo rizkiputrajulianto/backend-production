@@ -7,6 +7,7 @@ const MateriRoutes = require('../controller/materi/routes');
 const memberRoutes = require('../controller/member/routes');
 const kota = require('../controller/kota/routes');
 const absensi = require('../controller/presensi/routes');
+const uploads = require('../uploadsController/routes');
 
 router.use('/user', UserRoutes);
 router.use('/class', ClassRoutes);
@@ -15,5 +16,6 @@ router.use('/materi', MateriRoutes);
 router.use('/member', memberRoutes);
 router.use('/kota', kota);
 router.use('/absen', absensi);
+router.use('/uploads', uploads);
 
 module.exports = router;
