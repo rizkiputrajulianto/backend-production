@@ -5,6 +5,7 @@ var logger = require('morgan');
 const { sequelize, Sequelize } = require('./src/models');
 const router = require('./src/routes');
 const cors = require('cors');
+require('dotenv').config();
 
 // sequelize.sync({ force: true });
 // sequelize.sync();
@@ -20,6 +21,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(router);
 app.use('/uploads', express.static('uploads'));
 
-app.listen(process.env.PORT || 5000);
+// app.listen(process.env.PORT || 5000);
 
 module.exports = app;
