@@ -1,10 +1,16 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "backend",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
+    "username": "otczdrylifikox",
+    "password": "bcc3f796a3a80252a1eadf3ecafed9fd47035eda993718f14fcd8a4fb0b90a5c",
+    "database": "da2di54h7ih230",
+    "host": "ec2-3-95-130-249.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    },
     "define":{
       "underscored": true,
       "paranoid": true,
