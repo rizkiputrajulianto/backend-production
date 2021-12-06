@@ -4,6 +4,7 @@
     "password": "bcc3f796a3a80252a1eadf3ecafed9fd47035eda993718f14fcd8a4fb0b90a5c",
     "database": "da2di54h7ih230",
     "host": "ec2-3-95-130-249.compute-1.amazonaws.com",
+    "port": 5432,
     "dialect": "postgres",
     "dialectOptions": {
       "ssl": {
