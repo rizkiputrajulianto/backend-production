@@ -21,6 +21,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static('uploads'));
 app.use(router);
 
-// app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 5000);
 
 module.exports = app;
