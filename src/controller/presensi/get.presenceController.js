@@ -21,7 +21,7 @@ const service = async (req, res, next) => {
 				model: Class,
 				as: 'activeClass',
 				attributes: [ 'id', 'namaKelas', 'kodeKelas' ],
-				through: { attributes: [] },
+				through: { attributes: [ 'role' ] },
 				include: {
 					model: Session,
 					as: 'Sessions',
