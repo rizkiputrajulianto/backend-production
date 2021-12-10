@@ -32,6 +32,14 @@ const service = async (req, res, next) => {
 				}
 			]
 		});
+		requestDB.dataValues.address = {
+			alamat: requestDB.alamat.namaAlamat,
+			kecamatan: requestDB.alamat.Kecamatan.namaKecamatan,
+			kota: requestDB.alamat.Kecamatan.kota.namaKota,
+			provinsi: requestDB.alamat.Kecamatan.kota.provinsi.namaProvinsi
+		};
+
+		delete requestDB.dataValues.alamat;
 		return res.json({ data: requestDB });
 	} catch (error) {
 		return res.status(500).json({ msg: error.toString() });
